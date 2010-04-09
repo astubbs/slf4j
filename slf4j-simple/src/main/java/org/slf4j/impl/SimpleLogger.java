@@ -182,7 +182,7 @@ public class SimpleLogger extends MarkerIgnoringBase {
    * @param message
    * @param t
    */
-  private void log(String level, String message, Throwable t) {
+  protected void log(String level, String message, Throwable t) {
     StringBuffer buf = new StringBuffer();
 
     long millis = System.currentTimeMillis();
@@ -217,7 +217,7 @@ public class SimpleLogger extends MarkerIgnoringBase {
    * @param param1
    * @param param2
    */
-  private void formatAndLog(
+  protected void formatAndLog(
     String level, String format, Object arg1, Object arg2) {
     String message = MessageFormatter.format(format, arg1, arg2);
     log(level, message, null);
@@ -230,7 +230,7 @@ public class SimpleLogger extends MarkerIgnoringBase {
    * @param format
    * @param argArray
    */
-  private void formatAndLog(String level, String format, Object[] argArray) {
+  protected void formatAndLog(String level, String format, Object[] argArray) {
     String message = MessageFormatter.arrayFormat(format, argArray);
     log(level, message, null);
   }
